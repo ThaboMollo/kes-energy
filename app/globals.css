@@ -1,26 +1,55 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Brand palette sampled from the KES Energy Northwest flyer. */
+@theme {
+  --color-navy-50: #eef1fa;
+  --color-navy-100: #d9def2;
+  --color-navy-200: #b3bde4;
+  --color-navy-300: #8191cf;
+  --color-navy-600: #2a3d8f;
+  --color-navy-700: #1e2f78;
+  --color-navy-800: #172563;
+  --color-navy-900: #121d4f;
+  --color-navy-950: #0b1336;
+
+  --color-sun-100: #fff4cc;
+  --color-sun-200: #ffe68a;
+  --color-sun-300: #ffd84d;
+  --color-sun-400: #ffc81f;
+  --color-sun-500: #f5b400;
+  --color-sun-600: #d99400;
+
+  --color-ember-500: #e2362b;
+  --color-ember-600: #c42a20;
+
+  --color-whatsapp: #1f9d55;
+  --color-whatsapp-dark: #18804a;
+
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-heading), ui-sans-serif, system-ui, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
+  /* Keeps anchor targets clear of the sticky header. */
+  scroll-padding-top: 5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: var(--color-navy-950);
+}
+
+/* Hide the default disclosure triangle on <details>-based menus and FAQs. */
+summary::-webkit-details-marker {
+  display: none;
+}
+summary {
+  list-style: none;
 }
